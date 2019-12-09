@@ -18,7 +18,7 @@ import java.net.UnknownHostException;
  * 并不会严格要求递增～90%的需求都只要求趋势递增）
  */
 public class IdUtil {
-    // ==============================Fields===========================================
+
     /** 开始时间截 (2015-01-01) */
     private final long twepoch = 1489111610226L;
 
@@ -67,7 +67,6 @@ public class IdUtil {
         idWorker = new IdUtil(getWorkId(),getDataCenterId());
     }
 
-    //==============================Constructors=====================================
     /**
      * 构造函数
      * @param workerId 工作ID (0~31)
@@ -84,12 +83,12 @@ public class IdUtil {
         this.dataCenterId = dataCenterId;
     }
 
-    // ==============================Methods==========================================
     /**
      * 获得下一个ID (该方法是线程安全的)
      * @return SnowflakeId
      */
     public synchronized long nextId() {
+
         long timestamp = timeGen();
 
         //如果当前时间小于上一次ID生成的时间戳，说明系统时钟回退过这个时候应当抛出异常

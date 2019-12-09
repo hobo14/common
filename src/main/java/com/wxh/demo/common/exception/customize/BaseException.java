@@ -10,10 +10,6 @@ import com.wxh.demo.common.response.enums.IResult;
 public class BaseException extends RuntimeException {
     private Integer code;
 
-    public BaseException() {
-        super();
-    }
-
     /**
      * 尽量不要使用该方法，使用枚举参数
      * @param code
